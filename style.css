@@ -6,9 +6,9 @@
   --muted: #6b7280;
   --today: #e8f1ff;
   --other-month: #ececec;
-  --earnings: #1f5a78;
   --dividend: #f08a8a;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --primary: #2563eb;
 }
 
 * {
@@ -20,6 +20,10 @@ body {
   font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
   background: var(--bg);
   color: var(--text);
+}
+
+a {
+  color: inherit;
 }
 
 .app {
@@ -50,7 +54,20 @@ body {
 .toolbar {
   display: flex;
   gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
   justify-self: start;
+}
+
+.stock-select {
+  min-width: 220px;
+  max-width: 320px;
+  border: 1px solid #bfc4ca;
+  background: white;
+  color: #111827;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .month-title-wrap {
@@ -77,6 +94,28 @@ body {
   background: #f9fafb;
 }
 
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.btn-primary:disabled {
+  background: #93c5fd;
+  border-color: #93c5fd;
+  color: #fff;
+}
+
 .legend {
   display: flex;
   gap: 18px;
@@ -97,10 +136,6 @@ body {
   height: 12px;
   border-radius: 999px;
   display: inline-block;
-}
-
-.dot-earnings {
-  background: var(--earnings);
 }
 
 .dot-dividend {
@@ -139,12 +174,18 @@ body {
 }
 
 .day-cell {
+  min-width: 0;
   min-height: 150px;
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 8px 8px 10px;
   position: relative;
   background: white;
+  cursor: pointer;
+}
+
+.day-cell:hover {
+  background: #f9fbff;
 }
 
 .day-cell.other-month {
@@ -163,6 +204,7 @@ body {
 }
 
 .day-events {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -177,13 +219,9 @@ body {
   text-decoration: none;
   font-size: 13px;
   line-height: 1.3;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.event-pill.earnings {
-  background: var(--earnings);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .event-pill.dividend {
@@ -191,7 +229,7 @@ body {
 }
 
 .more-text {
-  color: #2563eb;
+  color: var(--primary);
   font-size: 13px;
   font-weight: 600;
   padding-left: 4px;
@@ -207,6 +245,111 @@ body {
   font-size: 14px;
 }
 
+.modal.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.modal-panel {
+  position: relative;
+  width: min(720px, calc(100vw - 24px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  margin: 16px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  padding: 20px 20px 24px;
+}
+
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  border: 0;
+  background: transparent;
+  font-size: 36px;
+  line-height: 1;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #4b5563;
+}
+
+.modal-header {
+  margin-bottom: 16px;
+  padding-right: 40px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-empty {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.detail-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: #fafafa;
+}
+
+.detail-type {
+  display: inline-block;
+  background: var(--dividend);
+  color: white;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.detail-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.detail-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.detail-link:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 1024px) {
   .topbar {
     grid-template-columns: 1fr;
@@ -219,6 +362,13 @@ body {
 }
 
 @media (max-width: 768px) {
+  .stock-select {
+    min-width: 180px;
+    max-width: 100%;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
   .weekdays > div {
     font-size: 14px;
     padding: 10px 4px;
@@ -240,5 +390,15 @@ body {
 
   .day-number {
     font-size: 16px;
+  }
+
+  .modal-panel {
+    width: calc(100vw - 16px);
+    margin: 8px auto;
+    padding: 16px 16px 20px;
+  }
+
+  .modal-header h3 {
+    font-size: 22px;
   }
 }

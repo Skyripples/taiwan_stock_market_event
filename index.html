@@ -11,11 +11,15 @@
     <header class="topbar">
       <div class="topbar-left">
         <h1>台股事件簿</h1>
-        <p class="subtitle">目前追蹤：台積電（2330）</p>
+        <p class="subtitle">目前顯示：全市場除權息日曆</p>
       </div>
 
       <div class="toolbar">
+        <select id="stockSelect" class="stock-select" aria-label="選擇股票">
+          <option value="__ALL__">全部股票</option>
+        </select>
         <button id="todayBtn" class="btn btn-light">Today</button>
+        <button id="refreshBtn" class="btn btn-primary" type="button">Refresh</button>
         <button id="prevBtn" class="btn btn-light">‹</button>
         <button id="nextBtn" class="btn btn-light">›</button>
       </div>
@@ -46,8 +50,19 @@
 
     <section class="footer-info">
       <div id="updateInfo">載入中...</div>
-      <div>資料來源：MOPS、TWSE</div>
+      <div>資料來源：TWSE</div>
     </section>
+  </div>
+
+  <div id="eventModal" class="modal hidden">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel">
+      <button id="closeModalBtn" class="modal-close" aria-label="關閉">×</button>
+      <div class="modal-header">
+        <h3 id="modalTitle">事件詳情</h3>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
   </div>
 
   <script src="./app.js"></script>
