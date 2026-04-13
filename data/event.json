@@ -1,0 +1,17 @@
+{
+  "updated_at_utc": "2026-04-13 09:25:21 UTC",
+  "updated_at_taipei": "2026-04-13 17:25:21 UTC+8",
+  "stock_id": "2330",
+  "stock_name": "台積電",
+  "events": [
+    {
+      "stock_id": "2330",
+      "stock_name": "台積電",
+      "type": "dividend",
+      "title": "台積電除權息（本公司訂定民國114年度第三季現金股利配息基準日公告）",
+      "date": "2026-03-17",
+      "source": "MOPS 除權息公告 (t108sb19)",
+      "url": "https://mops.twse.com.tw/mops/web/t108sb19"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>台股事件簿</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1>台股事件簿</h1>
+        <p class="subtitle">目前追蹤：台積電（2330）</p>
+      </div>
+
+      <div class="toolbar">
+        <button id="todayBtn" class="btn btn-light">Today</button>
+        <button id="prevBtn" class="btn btn-light">‹</button>
+        <button id="nextBtn" class="btn btn-light">›</button>
+      </div>
+
+      <div class="month-title-wrap">
+        <h2 id="monthTitle" class="month-title"></h2>
+      </div>
+    </header>
+
+    <section class="legend">
+      <span class="legend-item">
+        <span class="dot dot-dividend"></span> 除權息
+      </span>
+    </section>
+
+    <main class="calendar-card">
+      <div class="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+      <div id="calendarGrid" class="calendar-grid"></div>
+    </main>
+
+    <section class="footer-info">
+      <div id="updateInfo">載入中...</div>
+      <div>資料來源：MOPS、TWSE</div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

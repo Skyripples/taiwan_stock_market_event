@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Fetch Taiwan stock events",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": [
+        "scripts\\fetch_events.py"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
