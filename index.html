@@ -11,13 +11,14 @@
     <header class="topbar">
       <div class="topbar-left">
         <h1>台股事件簿</h1>
-        <p class="subtitle">目前顯示：全市場除權息日曆</p>
+        <p class="subtitle">目前顯示：全市場各事件日期</p>
       </div>
 
       <div class="toolbar">
         <select id="stockSelect" class="stock-select" aria-label="選擇股票">
           <option value="__ALL__">全部股票</option>
         </select>
+        <button id="themeToggleBtn" class="btn btn-light" type="button" aria-pressed="false">深色模式</button>
         <button id="todayBtn" class="btn btn-light">Today</button>
         <button id="refreshBtn" class="btn btn-primary" type="button">Refresh</button>
         <button id="prevBtn" class="btn btn-light">‹</button>
@@ -32,6 +33,12 @@
     <section class="legend">
       <span class="legend-item">
         <span class="dot dot-dividend"></span> 除權息
+      </span>
+      <span class="legend-item">
+        <span class="dot dot-earnings-call"></span> 法說會
+      </span>
+      <span class="legend-item">
+        <span class="dot dot-shareholder-meeting"></span> 股東會
       </span>
     </section>
 

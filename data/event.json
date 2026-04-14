@@ -1,15 +1,285 @@
 {
-  "target_year": 2026,
-  "updated_at_utc": "2026-04-14 03:28:17 UTC",
-  "updated_at_taipei": "2026-04-14 11:28:17 UTC+8",
+  "year": 2026,
+  "updated_at_utc": "2026-04-14 07:17:16 UTC",
+  "updated_at_taipei": "2026-04-14 15:17:16 UTC+8",
   "events": [
+    {
+      "stock_id": "3152",
+      "stock_name": "璟德",
+      "type": "shareholder_meeting",
+      "title": "3152 璟德(股東會)",
+      "date": "2026-01-15",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "2062",
+      "stock_name": "橋椿",
+      "type": "shareholder_meeting",
+      "title": "2062 橋椿(股東會)",
+      "date": "2026-02-13",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "5529",
+      "stock_name": "鉅陞",
+      "type": "shareholder_meeting",
+      "title": "5529 鉅陞(股東會)",
+      "date": "2026-03-01",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "4195",
+      "stock_name": "基米",
+      "type": "shareholder_meeting",
+      "title": "4195 基米(股東臨時會)",
+      "date": "2026-03-02",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "1451",
+      "stock_name": "年興",
+      "type": "dividend",
+      "title": "1451 年興(除權息)",
+      "date": "2026-03-04",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "8102",
+      "stock_name": "傑霖科技",
+      "type": "dividend",
+      "title": "8102 傑霖科技(除權息)",
+      "date": "2026-03-06",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "4903",
+      "stock_name": "聯光通",
+      "type": "shareholder_meeting",
+      "title": "4903 聯光通(股東會)",
+      "date": "2026-03-09",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "911608",
+      "stock_name": "明輝-DR",
+      "type": "shareholder_meeting",
+      "title": "911608 明輝-DR(股東會)",
+      "date": "2026-03-09",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "3289",
+      "stock_name": "宜特",
+      "type": "dividend",
+      "title": "3289 宜特(除權息)",
+      "date": "2026-03-10",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "1315",
+      "stock_name": "達新",
+      "type": "dividend",
+      "title": "1315 達新(除權息)",
+      "date": "2026-03-12",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "1799",
+      "stock_name": "易威",
+      "type": "shareholder_meeting",
+      "title": "1799 易威(股東會)",
+      "date": "2026-03-12",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "3164",
+      "stock_name": "景岳",
+      "type": "dividend",
+      "title": "3164 景岳(除權息)",
+      "date": "2026-03-12",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "5309",
+      "stock_name": "系統電",
+      "type": "shareholder_meeting",
+      "title": "5309 系統電(股東會)",
+      "date": "2026-03-12",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "9103",
+      "stock_name": "美德醫療-DR",
+      "type": "shareholder_meeting",
+      "title": "9103 美德醫療-DR(股東會)",
+      "date": "2026-03-12",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "4104",
+      "stock_name": "佳醫",
+      "type": "dividend",
+      "title": "4104 佳醫(除權息)",
+      "date": "2026-03-13",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "4927",
+      "stock_name": "泰鼎-KY",
+      "type": "shareholder_meeting",
+      "title": "4927 泰鼎-KY(股東會)",
+      "date": "2026-03-13",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "1445",
+      "stock_name": "大宇",
+      "type": "dividend",
+      "title": "1445 大宇(除權息)",
+      "date": "2026-03-16",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "2065",
+      "stock_name": "世豐",
+      "type": "dividend",
+      "title": "2065 世豐(除權息)",
+      "date": "2026-03-16",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "2070",
+      "stock_name": "精湛",
+      "type": "dividend",
+      "title": "2070 精湛(除權息)",
+      "date": "2026-03-16",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "2535",
+      "stock_name": "達欣工",
+      "type": "dividend",
+      "title": "2535 達欣工(除權息)",
+      "date": "2026-03-16",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "4130",
+      "stock_name": "健亞",
+      "type": "shareholder_meeting",
+      "title": "4130 健亞(股東會)",
+      "date": "2026-03-16",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "4966",
+      "stock_name": "譜瑞-KY",
+      "type": "dividend",
+      "title": "4966 譜瑞-KY(除權息)",
+      "date": "2026-03-17",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "6831",
+      "stock_name": "邁科",
+      "type": "dividend",
+      "title": "6831 邁科(除權息)",
+      "date": "2026-03-17",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "1217",
+      "stock_name": "愛之味",
+      "type": "dividend",
+      "title": "1217 愛之味(除權息)",
+      "date": "2026-03-18",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "1225",
+      "stock_name": "福懋油",
+      "type": "shareholder_meeting",
+      "title": "1225 福懋油(股東臨時會)",
+      "date": "2026-03-18",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "1293",
+      "stock_name": "利統",
+      "type": "dividend",
+      "title": "1293 利統(除權息)",
+      "date": "2026-03-20",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "3605",
+      "stock_name": "宏致",
+      "type": "dividend",
+      "title": "3605 宏致(除權息)",
+      "date": "2026-03-20",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "2072",
+      "stock_name": "世紀風電",
+      "type": "dividend",
+      "title": "2072 世紀風電(除權息)",
+      "date": "2026-03-24",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "6841",
+      "stock_name": "長佳智能",
+      "type": "shareholder_meeting",
+      "title": "6841 長佳智能(股東會)",
+      "date": "2026-03-24",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "1475",
+      "stock_name": "業旺",
+      "type": "dividend",
+      "title": "1475 業旺(除權息)",
+      "date": "2026-03-27",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
     {
       "stock_id": "2072",
       "stock_name": "世紀風電",
       "type": "dividend",
       "title": "2072 世紀風電(除權息)",
       "date": "2026-04-10",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -18,8 +288,278 @@
       "type": "dividend",
       "title": "4532 瑞智(除權息)",
       "date": "2026-04-10",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "3362",
+      "stock_name": "先進光",
+      "type": "dividend",
+      "title": "3362 先進光(除權息)",
+      "date": "2026-04-13",
+      "source": "MOPS",
+      "url": "https://mopsov.twse.com.tw/mops/web/ajax_t108sb31new?parameters=32b138d25ee38c00fbf70ec5a53724972a4500829419c933492103358a9148bf8071084b1d15b7c2be8059c3409a33790215e2716103522dc12fcade661b00b9cb43e69e3adaae4bf31480e2c089bfa8"
+    },
+    {
+      "stock_id": "1210",
+      "stock_name": "大成",
+      "type": "earnings_call",
+      "title": "1210 大成(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "1294",
+      "stock_name": "漢田生技",
+      "type": "earnings_call",
+      "title": "1294 漢田生技(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "1477",
+      "stock_name": "聚陽",
+      "type": "earnings_call",
+      "title": "1477 聚陽(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "1598",
+      "stock_name": "岱宇",
+      "type": "earnings_call",
+      "title": "1598 岱宇(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2301",
+      "stock_name": "光寶科",
+      "type": "earnings_call",
+      "title": "2301 光寶科(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2308",
+      "stock_name": "台達電",
+      "type": "earnings_call",
+      "title": "2308 台達電(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2317",
+      "stock_name": "鴻海",
+      "type": "earnings_call",
+      "title": "2317 鴻海(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2328",
+      "stock_name": "廣宇",
+      "type": "earnings_call",
+      "title": "2328 廣宇(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2353",
+      "stock_name": "宏碁",
+      "type": "earnings_call",
+      "title": "2353 宏碁(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2882",
+      "stock_name": "國泰金",
+      "type": "earnings_call",
+      "title": "2882 國泰金(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "3324",
+      "stock_name": "雙鴻",
+      "type": "earnings_call",
+      "title": "3324 雙鴻(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "3529",
+      "stock_name": "力旺",
+      "type": "earnings_call",
+      "title": "3529 力旺(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "4147",
+      "stock_name": "中裕",
+      "type": "earnings_call",
+      "title": "4147 中裕(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "4441",
+      "stock_name": "振大環球",
+      "type": "earnings_call",
+      "title": "4441 振大環球(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "4554",
+      "stock_name": "橙的",
+      "type": "earnings_call",
+      "title": "4554 橙的(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "4958",
+      "stock_name": "臻鼎-KY",
+      "type": "earnings_call",
+      "title": "4958 臻鼎-KY(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6190",
+      "stock_name": "萬泰科",
+      "type": "earnings_call",
+      "title": "6190 萬泰科(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6231",
+      "stock_name": "系微",
+      "type": "earnings_call",
+      "title": "6231 系微(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6271",
+      "stock_name": "同欣電",
+      "type": "earnings_call",
+      "title": "6271 同欣電(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6548",
+      "stock_name": "長科*",
+      "type": "earnings_call",
+      "title": "6548 長科*(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6620",
+      "stock_name": "漢達",
+      "type": "earnings_call",
+      "title": "6620 漢達(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6712",
+      "stock_name": "長聖",
+      "type": "earnings_call",
+      "title": "6712 長聖(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6805",
+      "stock_name": "富世達",
+      "type": "earnings_call",
+      "title": "6805 富世達(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6903",
+      "stock_name": "巨漢",
+      "type": "earnings_call",
+      "title": "6903 巨漢(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6934",
+      "stock_name": "心誠鎂",
+      "type": "earnings_call",
+      "title": "6934 心誠鎂(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "7786",
+      "stock_name": "東方風能",
+      "type": "earnings_call",
+      "title": "7786 東方風能(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "7799",
+      "stock_name": "禾榮科",
+      "type": "earnings_call",
+      "title": "7799 禾榮科(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "7822",
+      "stock_name": "倍利科",
+      "type": "earnings_call",
+      "title": "7822 倍利科(法說會)",
+      "date": "2026-04-14",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "1316",
+      "stock_name": "上曜",
+      "type": "earnings_call",
+      "title": "1316 上曜(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "1475",
@@ -27,8 +567,188 @@
       "type": "dividend",
       "title": "1475 業旺(除權息)",
       "date": "2026-04-15",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "1590",
+      "stock_name": "亞德客-KY",
+      "type": "earnings_call",
+      "title": "1590 亞德客-KY(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2324",
+      "stock_name": "仁寶",
+      "type": "earnings_call",
+      "title": "2324 仁寶(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2327",
+      "stock_name": "國巨*",
+      "type": "earnings_call",
+      "title": "2327 國巨*(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2467",
+      "stock_name": "志聖",
+      "type": "earnings_call",
+      "title": "2467 志聖(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2884",
+      "stock_name": "玉山金",
+      "type": "earnings_call",
+      "title": "2884 玉山金(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2891",
+      "stock_name": "中信金",
+      "type": "earnings_call",
+      "title": "2891 中信金(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "3313",
+      "stock_name": "斐成",
+      "type": "earnings_call",
+      "title": "3313 斐成(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "4303",
+      "stock_name": "信立",
+      "type": "earnings_call",
+      "title": "4303 信立(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "4438",
+      "stock_name": "廣越",
+      "type": "earnings_call",
+      "title": "4438 廣越(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "4916",
+      "stock_name": "事欣科",
+      "type": "earnings_call",
+      "title": "4916 事欣科(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "5314",
+      "stock_name": "世紀*",
+      "type": "earnings_call",
+      "title": "5314 世紀*(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6418",
+      "stock_name": "詠昇",
+      "type": "earnings_call",
+      "title": "6418 詠昇(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6613",
+      "stock_name": "朋億*",
+      "type": "earnings_call",
+      "title": "6613 朋億*(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6624",
+      "stock_name": "萬年清",
+      "type": "earnings_call",
+      "title": "6624 萬年清(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "8047",
+      "stock_name": "星雲",
+      "type": "earnings_call",
+      "title": "8047 星雲(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "8103",
+      "stock_name": "瀚荃",
+      "type": "earnings_call",
+      "title": "8103 瀚荃(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "8261",
+      "stock_name": "富鼎",
+      "type": "earnings_call",
+      "title": "8261 富鼎(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "8299",
+      "stock_name": "群聯",
+      "type": "earnings_call",
+      "title": "8299 群聯(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "8464",
+      "stock_name": "億豐",
+      "type": "earnings_call",
+      "title": "8464 億豐(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "9919",
+      "stock_name": "康那香",
+      "type": "earnings_call",
+      "title": "9919 康那香(法說會)",
+      "date": "2026-04-15",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "1451",
@@ -36,8 +756,17 @@
       "type": "dividend",
       "title": "1451 年興(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "1504",
+      "stock_name": "東元",
+      "type": "earnings_call",
+      "title": "1504 東元(法說會)",
+      "date": "2026-04-16",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "1524",
@@ -45,7 +774,7 @@
       "type": "dividend",
       "title": "1524 耿鼎(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -54,8 +783,17 @@
       "type": "dividend",
       "title": "1604 聲寶(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "1799",
+      "stock_name": "易威",
+      "type": "earnings_call",
+      "title": "1799 易威(法說會)",
+      "date": "2026-04-16",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "2020",
@@ -63,7 +801,7 @@
       "type": "dividend",
       "title": "2020 美亞(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -72,8 +810,26 @@
       "type": "dividend",
       "title": "2032 新鋼(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "2317",
+      "stock_name": "鴻海",
+      "type": "earnings_call",
+      "title": "2317 鴻海(法說會)",
+      "date": "2026-04-16",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2330",
+      "stock_name": "台積電",
+      "type": "earnings_call",
+      "title": "2330 台積電(法說會)",
+      "date": "2026-04-16",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "2481",
@@ -81,7 +837,7 @@
       "type": "dividend",
       "title": "2481 強茂(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -90,8 +846,17 @@
       "type": "dividend",
       "title": "2707 晶華(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "3008",
+      "stock_name": "大立光",
+      "type": "earnings_call",
+      "title": "3008 大立光(法說會)",
+      "date": "2026-04-16",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "3021",
@@ -99,7 +864,7 @@
       "type": "dividend",
       "title": "3021 鴻名(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -108,7 +873,7 @@
       "type": "dividend",
       "title": "6128 上福(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -117,8 +882,17 @@
       "type": "dividend",
       "title": "6224 聚鼎(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "6584",
+      "stock_name": "南俊國際",
+      "type": "earnings_call",
+      "title": "6584 南俊國際(法說會)",
+      "date": "2026-04-16",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "6625",
@@ -126,7 +900,7 @@
       "type": "dividend",
       "title": "6625 必應(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -135,7 +909,7 @@
       "type": "dividend",
       "title": "6672 騰輝電子-KY(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -144,7 +918,7 @@
       "type": "dividend",
       "title": "6756 威鋒電子(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -153,8 +927,26 @@
       "type": "dividend",
       "title": "6807 峰源-KY(除權息)",
       "date": "2026-04-16",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "6944",
+      "stock_name": "兆聯實業",
+      "type": "earnings_call",
+      "title": "6944 兆聯實業(法說會)",
+      "date": "2026-04-16",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6997",
+      "stock_name": "博弘",
+      "type": "earnings_call",
+      "title": "6997 博弘(法說會)",
+      "date": "2026-04-16",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "00904",
@@ -162,7 +954,7 @@
       "type": "dividend",
       "title": "00904 新光臺灣半導體30(除權息)",
       "date": "2026-04-17",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -171,7 +963,7 @@
       "type": "dividend",
       "title": "00936 台新永續高息中小(除權息)",
       "date": "2026-04-17",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -180,7 +972,7 @@
       "type": "dividend",
       "title": "00947 台新臺灣IC設計(除權息)",
       "date": "2026-04-17",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -189,7 +981,7 @@
       "type": "dividend",
       "title": "00962 台新AI優息動能(除權息)",
       "date": "2026-04-17",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -198,7 +990,7 @@
       "type": "dividend",
       "title": "0052 富邦科技(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -207,7 +999,7 @@
       "type": "dividend",
       "title": "00714 群益道瓊美國地產(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -216,7 +1008,7 @@
       "type": "dividend",
       "title": "00717 富邦美國特別股(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -225,7 +1017,7 @@
       "type": "dividend",
       "title": "00730 富邦臺灣優質高息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -234,7 +1026,7 @@
       "type": "dividend",
       "title": "00733 富邦臺灣中小(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -243,7 +1035,7 @@
       "type": "dividend",
       "title": "00900 富邦特選高股息30(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -252,7 +1044,7 @@
       "type": "dividend",
       "title": "00905 FT臺灣Smart(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -261,7 +1053,7 @@
       "type": "dividend",
       "title": "00908 富邦入息REITs+(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -270,7 +1062,7 @@
       "type": "dividend",
       "title": "00909 國泰數位支付服務(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -279,7 +1071,7 @@
       "type": "dividend",
       "title": "00912 中信臺灣智慧50(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -288,7 +1080,7 @@
       "type": "dividend",
       "title": "00927 群益半導體收益(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -297,7 +1089,7 @@
       "type": "dividend",
       "title": "00934 中信成長高股息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -306,7 +1098,7 @@
       "type": "dividend",
       "title": "00943 兆豐電子高息等權(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -315,7 +1107,7 @@
       "type": "dividend",
       "title": "00944 野村趨勢動能高息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -324,7 +1116,7 @@
       "type": "dividend",
       "title": "00945B 凱基美國非投等債(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -333,7 +1125,7 @@
       "type": "dividend",
       "title": "00952 凱基台灣AI50(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -342,7 +1134,7 @@
       "type": "dividend",
       "title": "00956 中信日經高股息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -351,7 +1143,7 @@
       "type": "dividend",
       "title": "00960 野村全球航運龍頭(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -360,7 +1152,7 @@
       "type": "dividend",
       "title": "00961 FT臺灣永續高息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -369,7 +1161,7 @@
       "type": "dividend",
       "title": "00963 中信全球高股息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -378,7 +1170,7 @@
       "type": "dividend",
       "title": "00964 中信亞太高股息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -387,7 +1179,7 @@
       "type": "dividend",
       "title": "009804 聯邦台精彩50(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -396,7 +1188,7 @@
       "type": "dividend",
       "title": "00981T 平衡凱基雙核收息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -405,7 +1197,7 @@
       "type": "dividend",
       "title": "00982D 主動富邦動態入息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -414,7 +1206,7 @@
       "type": "dividend",
       "title": "00983D 主動富邦複合收益(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -423,8 +1215,35 @@
       "type": "dividend",
       "title": "00984A 主動安聯台灣高息(除權息)",
       "date": "2026-04-20",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "2317",
+      "stock_name": "鴻海",
+      "type": "earnings_call",
+      "title": "2317 鴻海(法說會)",
+      "date": "2026-04-20",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2634",
+      "stock_name": "漢翔",
+      "type": "earnings_call",
+      "title": "2634 漢翔(法說會)",
+      "date": "2026-04-20",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6785",
+      "stock_name": "昱展新藥",
+      "type": "earnings_call",
+      "title": "6785 昱展新藥(法說會)",
+      "date": "2026-04-20",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "00929",
@@ -432,8 +1251,17 @@
       "type": "dividend",
       "title": "00929 復華台灣科技優息(除權息)",
       "date": "2026-04-21",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "4966",
+      "stock_name": "譜瑞-KY",
+      "type": "earnings_call",
+      "title": "4966 譜瑞-KY(法說會)",
+      "date": "2026-04-22",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "0056",
@@ -441,7 +1269,7 @@
       "type": "dividend",
       "title": "0056 元大高股息(除權息)",
       "date": "2026-04-23",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -450,7 +1278,7 @@
       "type": "dividend",
       "title": "00907 永豐優息存股(除權息)",
       "date": "2026-04-23",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -459,7 +1287,7 @@
       "type": "dividend",
       "title": "3605 宏致(除權息)",
       "date": "2026-04-23",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -468,7 +1296,7 @@
       "type": "dividend",
       "title": "4104 佳醫(除權息)",
       "date": "2026-04-23",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -477,7 +1305,7 @@
       "type": "dividend",
       "title": "4764 雙鍵(除權息)",
       "date": "2026-04-23",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -486,7 +1314,7 @@
       "type": "dividend",
       "title": "6192 巨路(除權息)",
       "date": "2026-04-23",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -495,7 +1323,7 @@
       "type": "dividend",
       "title": "6931 青松健康(除權息)",
       "date": "2026-04-23",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -504,7 +1332,7 @@
       "type": "dividend",
       "title": "7795 長廣(除權息)",
       "date": "2026-04-23",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -513,7 +1341,7 @@
       "type": "dividend",
       "title": "1217 愛之味(除權息)",
       "date": "2026-04-24",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -522,7 +1350,7 @@
       "type": "dividend",
       "title": "1315 達新(除權息)",
       "date": "2026-04-24",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -531,7 +1359,7 @@
       "type": "dividend",
       "title": "1717 長興(除權息)",
       "date": "2026-04-24",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -540,8 +1368,143 @@
       "type": "dividend",
       "title": "2477 美隆電(除權息)",
       "date": "2026-04-24",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "6176",
+      "stock_name": "瑞儀",
+      "type": "earnings_call",
+      "title": "6176 瑞儀(法說會)",
+      "date": "2026-04-24",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2337",
+      "stock_name": "旺宏",
+      "type": "earnings_call",
+      "title": "2337 旺宏(法說會)",
+      "date": "2026-04-27",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "1611",
+      "stock_name": "中電",
+      "type": "earnings_call",
+      "title": "1611 中電(法說會)",
+      "date": "2026-04-28",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "3035",
+      "stock_name": "智原",
+      "type": "earnings_call",
+      "title": "3035 智原(法說會)",
+      "date": "2026-04-28",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "1590",
+      "stock_name": "亞德客-KY",
+      "type": "earnings_call",
+      "title": "1590 亞德客-KY(法說會)",
+      "date": "2026-04-29",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2409",
+      "stock_name": "友達",
+      "type": "earnings_call",
+      "title": "2409 友達(法說會)",
+      "date": "2026-04-30",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "3105",
+      "stock_name": "穩懋",
+      "type": "earnings_call",
+      "title": "3105 穩懋(法說會)",
+      "date": "2026-04-30",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6526",
+      "stock_name": "達發",
+      "type": "earnings_call",
+      "title": "6526 達發(法說會)",
+      "date": "2026-05-05",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6719",
+      "stock_name": "力智",
+      "type": "earnings_call",
+      "title": "6719 力智(法說會)",
+      "date": "2026-05-05",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2395",
+      "stock_name": "研華",
+      "type": "earnings_call",
+      "title": "2395 研華(法說會)",
+      "date": "2026-05-06",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "6643",
+      "stock_name": "M31",
+      "type": "earnings_call",
+      "title": "6643 M31(法說會)",
+      "date": "2026-05-06",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "2412",
+      "stock_name": "中華電",
+      "type": "earnings_call",
+      "title": "2412 中華電(法說會)",
+      "date": "2026-05-07",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "4904",
+      "stock_name": "遠傳",
+      "type": "earnings_call",
+      "title": "4904 遠傳(法說會)",
+      "date": "2026-05-07",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "3529",
+      "stock_name": "力旺",
+      "type": "earnings_call",
+      "title": "3529 力旺(法說會)",
+      "date": "2026-05-08",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
+    },
+    {
+      "stock_id": "3045",
+      "stock_name": "台灣大",
+      "type": "earnings_call",
+      "title": "3045 台灣大(法說會)",
+      "date": "2026-05-13",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "01007T",
@@ -549,8 +1512,17 @@
       "type": "dividend",
       "title": "01007T 兆豐國泰R2(除權息)",
       "date": "2026-05-14",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "2886",
+      "stock_name": "兆豐金",
+      "type": "earnings_call",
+      "title": "2886 兆豐金(法說會)",
+      "date": "2026-05-27",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call"
     },
     {
       "stock_id": "3413",
@@ -558,7 +1530,7 @@
       "type": "dividend",
       "title": "3413 京鼎(除權息)",
       "date": "2026-05-27",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -567,7 +1539,7 @@
       "type": "dividend",
       "title": "6176 瑞儀(除權息)",
       "date": "2026-06-01",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -576,7 +1548,7 @@
       "type": "dividend",
       "title": "2313 華通(除權息)",
       "date": "2026-06-02",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -585,7 +1557,7 @@
       "type": "dividend",
       "title": "2450 神腦(除權息)",
       "date": "2026-06-17",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -594,7 +1566,7 @@
       "type": "dividend",
       "title": "3447 展達(除權息)",
       "date": "2026-06-22",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
     {
@@ -603,7 +1575,7 @@
       "type": "dividend",
       "title": "5522 遠雄(除權息)",
       "date": "2026-06-25",
-      "source": "TWSE OpenAPI TWT48U_ALL",
+      "source": "TWSE",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     }
   ]

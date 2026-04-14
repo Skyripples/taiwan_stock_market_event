@@ -6,9 +6,61 @@
   --muted: #6b7280;
   --today: #e8f1ff;
   --other-month: #ececec;
+  --control-bg: #ffffff;
+  --control-border: #bfc4ca;
+  --control-text: #111827;
+  --control-hover: #f9fafb;
+  --weekdays-bg: #fafafa;
+  --day-bg: #ffffff;
+  --day-hover: #f9fbff;
+  --day-number: #333333;
+  --modal-bg: #ffffff;
+  --modal-backdrop: rgba(0, 0, 0, 0.32);
+  --detail-bg: #fafafa;
+  --detail-border: #e5e7eb;
+  --detail-meta: #374151;
+  --close-muted: #9ca3af;
+  --close-hover: #4b5563;
   --dividend: #f08a8a;
+  --earnings-call: #22c55e;
+  --shareholder-meeting: #3b82f6;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-disabled: #93c5fd;
+}
+
+body.theme-dark {
+  --bg: #0b1220;
+  --card: #111827;
+  --border: #374151;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --today: #1e293b;
+  --other-month: #0f172a;
+  --control-bg: #1f2937;
+  --control-border: #4b5563;
+  --control-text: #e5e7eb;
+  --control-hover: #273449;
+  --weekdays-bg: #0f172a;
+  --day-bg: #111827;
+  --day-hover: #1a2638;
+  --day-number: #d1d5db;
+  --modal-bg: #0f172a;
+  --modal-backdrop: rgba(2, 6, 23, 0.72);
+  --detail-bg: #111827;
+  --detail-border: #374151;
+  --detail-meta: #cbd5e1;
+  --close-muted: #cbd5e1;
+  --close-hover: #f8fafc;
+  --shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  --primary: #60a5fa;
+  --primary-hover: #3b82f6;
+  --primary-disabled: #475569;
+}
+
+body.theme-dark {
+  color-scheme: dark;
 }
 
 * {
@@ -62,12 +114,16 @@ a {
 .stock-select {
   min-width: 220px;
   max-width: 320px;
-  border: 1px solid #bfc4ca;
-  background: white;
-  color: #111827;
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--control-text);
   padding: 10px 12px;
   border-radius: 8px;
   font-size: 16px;
+}
+
+#themeToggleBtn {
+  min-width: 96px;
 }
 
 .month-title-wrap {
@@ -81,9 +137,9 @@ a {
 }
 
 .btn {
-  border: 1px solid #bfc4ca;
-  background: white;
-  color: #111827;
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--control-text);
   padding: 10px 16px;
   cursor: pointer;
   border-radius: 8px;
@@ -91,7 +147,12 @@ a {
 }
 
 .btn:hover {
-  background: #f9fafb;
+  background: var(--control-hover);
+}
+
+.btn-light {
+  background: var(--control-bg);
+  color: var(--control-text);
 }
 
 .btn:disabled {
@@ -106,13 +167,13 @@ a {
 }
 
 .btn-primary:hover {
-  background: #1d4ed8;
-  border-color: #1d4ed8;
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
 .btn-primary:disabled {
-  background: #93c5fd;
-  border-color: #93c5fd;
+  background: var(--primary-disabled);
+  border-color: var(--primary-disabled);
   color: #fff;
 }
 
@@ -142,6 +203,14 @@ a {
   background: var(--dividend);
 }
 
+.dot-earnings-call {
+  background: var(--earnings-call);
+}
+
+.dot-shareholder-meeting {
+  background: var(--shareholder-meeting);
+}
+
 .calendar-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -152,7 +221,7 @@ a {
 .weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  background: #fafafa;
+  background: var(--weekdays-bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -180,12 +249,12 @@ a {
   border-bottom: 1px solid var(--border);
   padding: 8px 8px 10px;
   position: relative;
-  background: white;
+  background: var(--day-bg);
   cursor: pointer;
 }
 
 .day-cell:hover {
-  background: #f9fbff;
+  background: var(--day-hover);
 }
 
 .day-cell.other-month {
@@ -199,7 +268,7 @@ a {
 .day-number {
   text-align: right;
   font-size: 18px;
-  color: #333;
+  color: var(--day-number);
   margin-bottom: 8px;
 }
 
@@ -226,6 +295,14 @@ a {
 
 .event-pill.dividend {
   background: var(--dividend);
+}
+
+.event-pill.earnings_call {
+  background: var(--earnings-call);
+}
+
+.event-pill.shareholder_meeting {
+  background: var(--shareholder-meeting);
 }
 
 .more-text {
@@ -258,7 +335,7 @@ a {
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.32);
+  background: var(--modal-backdrop);
 }
 
 .modal-panel {
@@ -267,7 +344,7 @@ a {
   max-height: calc(100vh - 32px);
   overflow: auto;
   margin: 16px auto;
-  background: #fff;
+  background: var(--modal-bg);
   border-radius: 16px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
   padding: 20px 20px 24px;
@@ -281,12 +358,12 @@ a {
   background: transparent;
   font-size: 36px;
   line-height: 1;
-  color: #9ca3af;
+  color: var(--close-muted);
   cursor: pointer;
 }
 
 .modal-close:hover {
-  color: #4b5563;
+  color: var(--close-hover);
 }
 
 .modal-header {
@@ -311,10 +388,10 @@ a {
 }
 
 .detail-card {
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--detail-border);
   border-radius: 12px;
   padding: 14px 16px;
-  background: #fafafa;
+  background: var(--detail-bg);
 }
 
 .detail-type {
@@ -327,6 +404,14 @@ a {
   margin-bottom: 10px;
 }
 
+.detail-type.earnings_call {
+  background: var(--earnings-call);
+}
+
+.detail-type.shareholder_meeting {
+  background: var(--shareholder-meeting);
+}
+
 .detail-title {
   margin: 0 0 8px;
   font-size: 18px;
@@ -336,7 +421,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  color: #374151;
+  color: var(--detail-meta);
   font-size: 14px;
 }
 

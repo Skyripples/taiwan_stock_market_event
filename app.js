@@ -7,6 +7,7 @@ const refreshBtn = document.getElementById("refreshBtn");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const stockSelect = document.getElementById("stockSelect");
+const themeToggleBtn = document.getElementById("themeToggleBtn");
 
 const eventModal = document.getElementById("eventModal");
 const modalBackdrop = document.getElementById("modalBackdrop");
@@ -19,9 +20,14 @@ let allEvents = [];
 let isReloading = false;
 const STOCK_ALL_VALUE = "__ALL__";
 let selectedStockId = STOCK_ALL_VALUE;
+const THEME_STORAGE_KEY = "taiwan_stock_market_theme";
 
 const EVENT_LABEL = {
   dividend: "除權息",
+  earnings_call: "法說會",
+  shareholder_meeting: "股東會",
+  material_info: "重大訊息",
+  revenue: "月營收",
 };
 
 function pad2(n) {
@@ -75,7 +81,7 @@ function openModal(dateStr, dayEvents) {
       card.className = "detail-card";
 
       const type = document.createElement("div");
-      type.className = "detail-type";
+      type.className = `detail-type ${ev.type}`;
       type.textContent = EVENT_LABEL[ev.type] || ev.type;
 
       const title = document.createElement("h4");
@@ -117,6 +123,46 @@ function closeModal() {
   eventModal.classList.add("hidden");
 }
 
+function getPreferredTheme() {
+  try {
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme === "light" || savedTheme === "dark") {
+      return savedTheme;
+    }
+  } catch (err) {
+    // Ignore localStorage access issues and fall back to system preference.
+  }
+
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return "dark";
+  }
+
+  return "light";
+}
+
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.classList.toggle("theme-dark", isDark);
+  document.body.classList.toggle("theme-light", !isDark);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.textContent = isDark ? "淺色模式" : "深色模式";
+    themeToggleBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
+  }
+}
+
+function setTheme(theme, options = {}) {
+  const { persist = true } = options;
+  applyTheme(theme);
+  if (!persist) return;
+
+  try {
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+  } catch (err) {
+    // Ignore localStorage access issues.
+  }
+}
+
 function getFilteredEvents() {
   if (selectedStockId === STOCK_ALL_VALUE) {
     return allEvents;
@@ -148,7 +194,7 @@ function rebuildStockSelectOptions() {
 
   const allOption = document.createElement("option");
   allOption.value = STOCK_ALL_VALUE;
-  allOption.textContent = "\u5168\u90e8\u80a1\u7968";
+  allOption.textContent = "全部股票";
   stockSelect.appendChild(allOption);
 
   for (const [stockId, stockName] of sortedStocks) {
@@ -228,7 +274,7 @@ function renderCalendar() {
     if (dayEvents.length > 3) {
       const more = document.createElement("div");
       more.className = "more-text";
-      more.textContent = `more(共${dayEvents.length}家)`;
+      more.textContent = `more(共${dayEvents.length}項)`;
       eventsWrap.appendChild(more);
     }
 
@@ -246,7 +292,7 @@ function renderCalendar() {
 function setRefreshButtonState(isLoading) {
   if (!refreshBtn) return;
   refreshBtn.disabled = isLoading;
-  refreshBtn.textContent = isLoading ? "\u66f4\u65b0\u4e2d..." : "\u91cd\u65b0\u6574\u7406";
+  refreshBtn.textContent = isLoading ? "更新中..." : "重新整理";
 }
 
 async function loadEvents(options = {}) {
@@ -257,7 +303,7 @@ async function loadEvents(options = {}) {
   setRefreshButtonState(true);
 
   if (manual) {
-    updateInfo.textContent = "\u91cd\u65b0\u6574\u7406\u4e2d...";
+    updateInfo.textContent = "重新整理中...";
   }
 
   try {
@@ -270,11 +316,11 @@ async function loadEvents(options = {}) {
     allEvents = Array.isArray(data.events) ? data.events : [];
     rebuildStockSelectOptions();
 
-    const updatedAt = data.updated_at_taipei || data.updated_at_utc || "\u672a\u77e5";
-    updateInfo.textContent = `\u6700\u5f8c\u66f4\u65b0\uff1a${updatedAt}\uff5c\u5171 ${allEvents.length} \u7b46\u4e8b\u4ef6`;
+    const updatedAt = data.updated_at_taipei || data.updated_at_utc || "未知";
+    updateInfo.textContent = `最後更新：${updatedAt}｜共 ${allEvents.length} 筆事件`;
   } catch (err) {
     console.error(err);
-    updateInfo.textContent = "\u8f09\u5165\u4e8b\u4ef6\u5931\u6557\uff0c\u8acb\u7a0d\u5f8c\u518d\u8a66";
+    updateInfo.textContent = "載入事件失敗，請稍後再試";
     allEvents = [];
     rebuildStockSelectOptions();
   } finally {
@@ -294,6 +340,13 @@ if (stockSelect) {
     selectedStockId = stockSelect.value || STOCK_ALL_VALUE;
     closeModal();
     renderCalendar();
+  });
+}
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", () => {
+    const nextTheme = document.body.classList.contains("theme-dark") ? "light" : "dark";
+    setTheme(nextTheme);
   });
 }
 
@@ -322,5 +375,6 @@ document.addEventListener("keydown", (evt) => {
   }
 });
 
+setTheme(getPreferredTheme(), { persist: false });
 setRefreshButtonState(false);
 loadEvents();
