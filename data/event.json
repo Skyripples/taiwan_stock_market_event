@@ -1,71 +1,8 @@
 {
   "target_year": 2026,
-  "updated_at_utc": "2026-04-13 17:24:28 UTC",
-  "updated_at_taipei": "2026-04-14 01:24:28 UTC+8",
+  "updated_at_utc": "2026-04-14 03:28:17 UTC",
+  "updated_at_taipei": "2026-04-14 11:28:17 UTC+8",
   "events": [
-    {
-      "stock_id": "3164",
-      "stock_name": "景岳",
-      "type": "dividend",
-      "title": "3164 景岳(除權息)",
-      "date": "2026-04-08",
-      "source": "TWSE OpenAPI TWT48U_ALL",
-      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
-    },
-    {
-      "stock_id": "00940",
-      "stock_name": "元大台灣價值高息",
-      "type": "dividend",
-      "title": "00940 元大台灣價值高息(除權息)",
-      "date": "2026-04-09",
-      "source": "TWSE OpenAPI TWT48U_ALL",
-      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
-    },
-    {
-      "stock_id": "2535",
-      "stock_name": "達欣工",
-      "type": "dividend",
-      "title": "2535 達欣工(除權息)",
-      "date": "2026-04-09",
-      "source": "TWSE OpenAPI TWT48U_ALL",
-      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
-    },
-    {
-      "stock_id": "3004",
-      "stock_name": "豐達科",
-      "type": "dividend",
-      "title": "3004 豐達科(除權息)",
-      "date": "2026-04-09",
-      "source": "TWSE OpenAPI TWT48U_ALL",
-      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
-    },
-    {
-      "stock_id": "4566",
-      "stock_name": "時碩工業",
-      "type": "dividend",
-      "title": "4566 時碩工業(除權息)",
-      "date": "2026-04-09",
-      "source": "TWSE OpenAPI TWT48U_ALL",
-      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
-    },
-    {
-      "stock_id": "5388",
-      "stock_name": "中磊",
-      "type": "dividend",
-      "title": "5388 中磊(除權息)",
-      "date": "2026-04-09",
-      "source": "TWSE OpenAPI TWT48U_ALL",
-      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
-    },
-    {
-      "stock_id": "6830",
-      "stock_name": "汎銓",
-      "type": "dividend",
-      "title": "6830 汎銓(除權息)",
-      "date": "2026-04-09",
-      "source": "TWSE OpenAPI TWT48U_ALL",
-      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
-    },
     {
       "stock_id": "2072",
       "stock_name": "世紀風電",
@@ -603,6 +540,15 @@
       "type": "dividend",
       "title": "2477 美隆電(除權息)",
       "date": "2026-04-24",
+      "source": "TWSE OpenAPI TWT48U_ALL",
+      "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+    },
+    {
+      "stock_id": "01007T",
+      "stock_name": "兆豐國泰R2",
+      "type": "dividend",
+      "title": "01007T 兆豐國泰R2(除權息)",
+      "date": "2026-05-14",
       "source": "TWSE OpenAPI TWT48U_ALL",
       "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
     },
