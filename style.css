@@ -22,8 +22,10 @@
   --close-muted: #9ca3af;
   --close-hover: #4b5563;
   --dividend: #f08a8a;
+  --dividend-payment: #facc15;
   --earnings-call: #22c55e;
   --shareholder-meeting: #3b82f6;
+  --delisting: #ef4444;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
@@ -53,6 +55,8 @@ body.theme-dark {
   --detail-meta: #cbd5e1;
   --close-muted: #cbd5e1;
   --close-hover: #f8fafc;
+  --dividend-payment: #fbbf24;
+  --delisting: #f87171;
   --shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
   --primary: #60a5fa;
   --primary-hover: #3b82f6;
@@ -86,10 +90,17 @@ a {
 
 .topbar {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas:
+    "left tools right"
+    "month month month";
   align-items: center;
   gap: 12px;
   margin-bottom: 16px;
+}
+
+.topbar-left {
+  grid-area: left;
 }
 
 .topbar-left h1 {
@@ -104,11 +115,69 @@ a {
 }
 
 .toolbar {
+  grid-area: tools;
   display: flex;
   gap: 8px;
   align-items: center;
   flex-wrap: wrap;
   justify-self: start;
+}
+
+.topbar-right {
+  grid-area: right;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-switch-label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.theme-switch {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  display: inline-block;
+}
+
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch-slider {
+  position: absolute;
+  inset: 0;
+  background: #9ca3af;
+  border-radius: 999px;
+  border: 1px solid var(--control-border);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.theme-switch-slider::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+
+.theme-switch input:checked + .theme-switch-slider {
+  background: var(--primary);
+}
+
+.theme-switch input:checked + .theme-switch-slider::before {
+  transform: translateX(20px);
 }
 
 .stock-select {
@@ -122,11 +191,8 @@ a {
   font-size: 16px;
 }
 
-#themeToggleBtn {
-  min-width: 96px;
-}
-
 .month-title-wrap {
+  grid-area: month;
   justify-self: center;
 }
 
@@ -203,12 +269,20 @@ a {
   background: var(--dividend);
 }
 
+.dot-dividend-payment {
+  background: var(--dividend-payment);
+}
+
 .dot-earnings-call {
   background: var(--earnings-call);
 }
 
 .dot-shareholder-meeting {
   background: var(--shareholder-meeting);
+}
+
+.dot-delisting {
+  background: var(--delisting);
 }
 
 .calendar-card {
@@ -297,12 +371,21 @@ a {
   background: var(--dividend);
 }
 
+.event-pill.dividend_payment {
+  background: var(--dividend-payment);
+  color: #111827;
+}
+
 .event-pill.earnings_call {
   background: var(--earnings-call);
 }
 
 .event-pill.shareholder_meeting {
   background: var(--shareholder-meeting);
+}
+
+.event-pill.delisting {
+  background: var(--delisting);
 }
 
 .more-text {
@@ -412,6 +495,15 @@ a {
   background: var(--shareholder-meeting);
 }
 
+.detail-type.dividend_payment {
+  background: var(--dividend-payment);
+  color: #111827;
+}
+
+.detail-type.delisting {
+  background: var(--delisting);
+}
+
 .detail-title {
   margin: 0 0 8px;
   font-size: 18px;
@@ -438,11 +530,20 @@ a {
 @media (max-width: 1024px) {
   .topbar {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "right"
+      "left"
+      "tools"
+      "month";
   }
 
   .month-title-wrap,
   .toolbar {
     justify-self: start;
+  }
+
+  .topbar-right {
+    justify-self: end;
   }
 }
 

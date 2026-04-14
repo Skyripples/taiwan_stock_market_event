@@ -7,7 +7,7 @@ const refreshBtn = document.getElementById("refreshBtn");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const stockSelect = document.getElementById("stockSelect");
-const themeToggleBtn = document.getElementById("themeToggleBtn");
+const themeToggleSwitch = document.getElementById("themeToggleSwitch");
 
 const eventModal = document.getElementById("eventModal");
 const modalBackdrop = document.getElementById("modalBackdrop");
@@ -24,8 +24,10 @@ const THEME_STORAGE_KEY = "taiwan_stock_market_theme";
 
 const EVENT_LABEL = {
   dividend: "除權息",
+  dividend_payment: "股利發放日",
   earnings_call: "法說會",
   shareholder_meeting: "股東會",
+  delisting: "終止掛牌",
   material_info: "重大訊息",
   revenue: "月營收",
 };
@@ -55,6 +57,9 @@ function getMonthMatrix(year, month) {
 }
 
 function getDisplayText(eventItem) {
+  if (eventItem.type === "dividend_payment" && eventItem.title) {
+    return eventItem.title;
+  }
   const typeText = EVENT_LABEL[eventItem.type] || eventItem.type;
   return `${eventItem.stock_id} ${eventItem.stock_name}(${typeText})`;
 }
@@ -86,7 +91,9 @@ function openModal(dateStr, dayEvents) {
 
       const title = document.createElement("h4");
       title.className = "detail-title";
-      title.textContent = `${ev.stock_id} ${ev.stock_name}`;
+      title.textContent = ev.type === "dividend_payment" && ev.title
+        ? ev.title
+        : `${ev.stock_id} ${ev.stock_name}`;
 
       const meta = document.createElement("div");
       meta.className = "detail-meta";
@@ -145,9 +152,9 @@ function applyTheme(theme) {
   document.body.classList.toggle("theme-dark", isDark);
   document.body.classList.toggle("theme-light", !isDark);
 
-  if (themeToggleBtn) {
-    themeToggleBtn.textContent = isDark ? "淺色模式" : "深色模式";
-    themeToggleBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
+  if (themeToggleSwitch) {
+    themeToggleSwitch.checked = isDark;
+    themeToggleSwitch.setAttribute("aria-checked", isDark ? "true" : "false");
   }
 }
 
@@ -343,10 +350,9 @@ if (stockSelect) {
   });
 }
 
-if (themeToggleBtn) {
-  themeToggleBtn.addEventListener("click", () => {
-    const nextTheme = document.body.classList.contains("theme-dark") ? "light" : "dark";
-    setTheme(nextTheme);
+if (themeToggleSwitch) {
+  themeToggleSwitch.addEventListener("change", () => {
+    setTheme(themeToggleSwitch.checked ? "dark" : "light");
   });
 }
 

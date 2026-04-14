@@ -18,11 +18,18 @@
         <select id="stockSelect" class="stock-select" aria-label="選擇股票">
           <option value="__ALL__">全部股票</option>
         </select>
-        <button id="themeToggleBtn" class="btn btn-light" type="button" aria-pressed="false">深色模式</button>
         <button id="todayBtn" class="btn btn-light">Today</button>
         <button id="refreshBtn" class="btn btn-primary" type="button">Refresh</button>
         <button id="prevBtn" class="btn btn-light">‹</button>
         <button id="nextBtn" class="btn btn-light">›</button>
+      </div>
+
+      <div class="topbar-right">
+        <label for="themeToggleSwitch" class="theme-switch-label">深色模式</label>
+        <label class="theme-switch" for="themeToggleSwitch">
+          <input id="themeToggleSwitch" type="checkbox" role="switch" aria-label="深色模式">
+          <span class="theme-switch-slider"></span>
+        </label>
       </div>
 
       <div class="month-title-wrap">
@@ -39,6 +46,12 @@
       </span>
       <span class="legend-item">
         <span class="dot dot-shareholder-meeting"></span> 股東會
+      </span>
+      <span class="legend-item">
+        <span class="dot dot-dividend-payment"></span> 股利發放日
+      </span>
+      <span class="legend-item">
+        <span class="dot dot-delisting"></span> 終止掛牌
       </span>
     </section>
 
@@ -57,7 +70,7 @@
 
     <section class="footer-info">
       <div id="updateInfo">載入中...</div>
-      <div>資料來源：TWSE</div>
+      <div>資料來源：Yahoo（TWSE API、MOPS 暫停）</div>
     </section>
   </div>
 

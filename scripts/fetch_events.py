@@ -4,10 +4,11 @@ import argparse
 import html
 import json
 import re
+import time as time_module
 from dataclasses import asdict, dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 import urllib3
@@ -21,7 +22,19 @@ DEFAULT_TARGET_YEAR = 2026
 TAIPEI_TZ = timezone(timedelta(hours=8))
 
 TWSE_EXRIGHT_OPENAPI_URL = "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+YAHOO_DIVIDEND_URL = "https://tw.stock.yahoo.com/calendar/dividend"
 YAHOO_EARNINGS_URL = "https://tw.stock.yahoo.com/calendar/earnings-call"
+YAHOO_DELISTING_URL = "https://tw.stock.yahoo.com/calendar/delisting"
+YAHOO_HOLDERS_MEETING_URL = "https://tw.stock.yahoo.com/calendar/holders-meeting"
+USE_TWSE_DIVIDEND_API = False
+USE_MOPS_CALENDAR = False
+
+# Yahoo 行事曆頁面的可查詢範圍：往前 365 天、往後 180 天。
+YAHOO_DAY_RANGE_BEFORE = 365
+YAHOO_DAY_RANGE_AFTER = 180
+YAHOO_SWEEP_STEP_DAYS = 14
+YAHOO_REQUEST_DELAY_SECONDS = 0.2
+YAHOO_MAX_RETRIES = 3
 
 # 先放你目前確認可用的 MOPS 月曆 AJAX
 # 之後可再補更多月份對應的 URL
@@ -74,7 +87,7 @@ def fetch_text(url: str) -> str:
 
 
 # -------------------------
-# 除權息：TWSE
+# 除權息：TWSE（保留，預設停用）
 # -------------------------
 def roc_to_iso(roc: str) -> Optional[str]:
     if not re.fullmatch(r"\d{7,8}", roc):
@@ -232,7 +245,9 @@ def normalize_yahoo_symbol(symbol_text: str) -> str:
 
 
 def parse_yahoo_state(html: str) -> Optional[Dict[str, Any]]:
-    m = re.search(r"root\.App\.main\s*=\s*(\{.*?\});\n", html, re.S)
+    m = re.search(r"root\.App\.main\s*=\s*(\{.*?\});\s*\n", html, re.S)
+    if not m:
+        m = re.search(r"root\.App\.main\s*=\s*(\{.*?\});\s*</script>", html, re.S)
     if not m:
         return None
 
@@ -249,12 +264,7 @@ def parse_yahoo_state(html: str) -> Optional[Dict[str, Any]]:
         return None
 
 
-def fetch_yahoo_earnings(year: int) -> List[EventItem]:
-    html = fetch_text(YAHOO_EARNINGS_URL)
-    state = parse_yahoo_state(html)
-    if not state:
-        return []
-
+def extract_yahoo_calendars(state: Dict[str, Any]) -> Dict[str, Any]:
     calendars = (
         state.get("context", {})
         .get("dispatcher", {})
@@ -263,45 +273,264 @@ def fetch_yahoo_earnings(year: int) -> List[EventItem]:
         .get("data", {})
         .get("calendars", {})
     )
+    return calendars if isinstance(calendars, dict) else {}
+
+
+def get_yahoo_query_range_for_year(year: int) -> Optional[Tuple[date, date]]:
+    today_tpe = datetime.now(TAIPEI_TZ).date()
+    available_start = today_tpe - timedelta(days=YAHOO_DAY_RANGE_BEFORE)
+    available_end = today_tpe + timedelta(days=YAHOO_DAY_RANGE_AFTER)
+
+    target_start = date(year, 1, 1)
+    target_end = date(year, 12, 31)
+
+    query_start = max(target_start, available_start)
+    query_end = min(target_end, available_end)
+
+    if query_start > query_end:
+        return None
+    return query_start, query_end
+
+
+def build_yahoo_selected_dates(year: int) -> List[str]:
+    query_range = get_yahoo_query_range_for_year(year)
+    if not query_range:
+        return []
+
+    query_start, query_end = query_range
+    selected_dates: List[str] = []
+
+    d = query_start
+    while d <= query_end:
+        selected_dates.append(d.isoformat())
+        d += timedelta(days=YAHOO_SWEEP_STEP_DAYS)
+
+    end_text = query_end.isoformat()
+    if selected_dates and selected_dates[-1] != end_text:
+        selected_dates.append(end_text)
+
+    return selected_dates
+
+
+def fetch_yahoo_state_for_date(page_url: str, selected_date: str) -> Optional[Dict[str, Any]]:
+    url = f"{page_url}?date={selected_date}"
+
+    for attempt in range(1, YAHOO_MAX_RETRIES + 1):
+        text = fetch_text(url)
+        if "Request denied" in text:
+            if attempt < YAHOO_MAX_RETRIES:
+                time_module.sleep(float(attempt))
+                continue
+            return None
+
+        state = parse_yahoo_state(text)
+        if state:
+            return state
+
+        if attempt < YAHOO_MAX_RETRIES:
+            time_module.sleep(0.5 * attempt)
+
+    return None
+
+
+def parse_positive_number(value: Any) -> Optional[float]:
+    text = clean_text(value).replace(",", "")
+    if not text:
+        return None
+    try:
+        num = float(text)
+    except ValueError:
+        return None
+    return num if num > 0 else None
+
+
+def build_dividend_payment_text(cash_value: Any, stock_value: Any) -> str:
+    stock_amount = parse_positive_number(stock_value)
+    if stock_amount is not None:
+        return "股票股利"
+
+    cash_amount = parse_positive_number(cash_value)
+    if cash_amount is not None:
+        return f"現金股利{cash_amount:.2f}"
+
+    return "股利發放"
+
+
+def fetch_yahoo_calendar_events(
+    year: int,
+    page_url: str,
+    calendar_key: str,
+    event_type: str,
+    label: str,
+) -> List[EventItem]:
+    selected_dates = build_yahoo_selected_dates(year)
+    if not selected_dates:
+        return []
 
     events: List[EventItem] = []
-    for _, day_data in calendars.items():
-        if not isinstance(day_data, dict):
+    seen_keys: set = set()
+
+    for idx, selected_date in enumerate(selected_dates):
+        if idx > 0 and YAHOO_REQUEST_DELAY_SECONDS > 0:
+            time_module.sleep(YAHOO_REQUEST_DELAY_SECONDS)
+
+        state = fetch_yahoo_state_for_date(page_url, selected_date)
+        if not state:
             continue
 
-        earnings = day_data.get("earningsCall") or []
-        if not isinstance(earnings, list):
-            continue
+        calendars = extract_yahoo_calendars(state)
 
-        for item in earnings:
-            if not isinstance(item, dict):
+        for _, day_data in calendars.items():
+            if not isinstance(day_data, dict):
                 continue
 
-            stock_symbol = clean_text(item.get("symbol"))
-            stock_name = clean_text(item.get("symbolName"))
-            date_text = clean_text(item.get("date"))
-
-            stock_id = normalize_yahoo_symbol(stock_symbol)
-            iso_date = parse_yahoo_datetime(date_text)
-
-            if not stock_id or not stock_name or not iso_date:
-                continue
-            if not iso_date.startswith(str(year)):
+            rows = day_data.get(calendar_key) or []
+            if not isinstance(rows, list):
                 continue
 
-            events.append(
-                EventItem(
-                    stock_id=stock_id,
-                    stock_name=stock_name,
-                    type="earnings_call",
-                    title=f"{stock_id} {stock_name}(法說會)",
-                    date=iso_date,
-                    source="Yahoo",
-                    url=YAHOO_EARNINGS_URL,
+            for item in rows:
+                if not isinstance(item, dict):
+                    continue
+
+                stock_symbol = clean_text(item.get("symbol"))
+                stock_name = clean_text(item.get("symbolName"))
+                date_text = clean_text(item.get("date")) or clean_text(item.get("exDate"))
+
+                stock_id = normalize_yahoo_symbol(stock_symbol)
+                iso_date = parse_yahoo_datetime(date_text)
+                event_id = clean_text(item.get("eventId"))
+
+                if not stock_id or not stock_name or not iso_date:
+                    continue
+                if not iso_date.startswith(str(year)):
+                    continue
+
+                dedupe_key = event_id or f"{stock_id}|{iso_date}|{event_type}"
+                if dedupe_key in seen_keys:
+                    continue
+                seen_keys.add(dedupe_key)
+
+                events.append(
+                    EventItem(
+                        stock_id=stock_id,
+                        stock_name=stock_name,
+                        type=event_type,
+                        title=f"{stock_id} {stock_name}({label})",
+                        date=iso_date,
+                        source="Yahoo",
+                        url=page_url,
+                    )
                 )
-            )
 
     return events
+
+
+def fetch_yahoo_dividend(year: int) -> List[EventItem]:
+    selected_dates = build_yahoo_selected_dates(year)
+    if not selected_dates:
+        return []
+
+    events: List[EventItem] = []
+    seen_keys: set = set()
+
+    for idx, selected_date in enumerate(selected_dates):
+        if idx > 0 and YAHOO_REQUEST_DELAY_SECONDS > 0:
+            time_module.sleep(YAHOO_REQUEST_DELAY_SECONDS)
+
+        state = fetch_yahoo_state_for_date(YAHOO_DIVIDEND_URL, selected_date)
+        if not state:
+            continue
+
+        calendars = extract_yahoo_calendars(state)
+
+        for _, day_data in calendars.items():
+            if not isinstance(day_data, dict):
+                continue
+
+            rows = day_data.get("dividend") or []
+            if not isinstance(rows, list):
+                continue
+
+            for item in rows:
+                if not isinstance(item, dict):
+                    continue
+
+                stock_symbol = clean_text(item.get("symbol"))
+                stock_name = clean_text(item.get("symbolName"))
+                stock_id = normalize_yahoo_symbol(stock_symbol)
+                event_id = clean_text(item.get("eventId"))
+                if not stock_id or not stock_name:
+                    continue
+
+                ex_date = parse_yahoo_datetime(clean_text(item.get("date")) or clean_text(item.get("exDate")))
+                pay_date = parse_yahoo_datetime(clean_text(item.get("payDate")))
+                payout_text = build_dividend_payment_text(item.get("cash"), item.get("stock"))
+
+                if ex_date and ex_date.startswith(str(year)):
+                    ex_key = f"{event_id}|dividend|{ex_date}" if event_id else f"{stock_id}|dividend|{ex_date}"
+                    if ex_key not in seen_keys:
+                        seen_keys.add(ex_key)
+                        events.append(
+                            EventItem(
+                                stock_id=stock_id,
+                                stock_name=stock_name,
+                                type="dividend",
+                                title=f"{stock_id} {stock_name}(除權息)",
+                                date=ex_date,
+                                source="Yahoo",
+                                url=YAHOO_DIVIDEND_URL,
+                            )
+                        )
+
+                if pay_date and pay_date.startswith(str(year)):
+                    pay_key = (
+                        f"{event_id}|dividend_payment|{pay_date}" if event_id else f"{stock_id}|dividend_payment|{pay_date}"
+                    )
+                    if pay_key not in seen_keys:
+                        seen_keys.add(pay_key)
+                        events.append(
+                            EventItem(
+                                stock_id=stock_id,
+                                stock_name=stock_name,
+                                type="dividend_payment",
+                                title=f"{stock_id} {stock_name} {payout_text}",
+                                date=pay_date,
+                                source="Yahoo",
+                                url=YAHOO_DIVIDEND_URL,
+                            )
+                        )
+
+    return events
+
+
+def fetch_yahoo_earnings(year: int) -> List[EventItem]:
+    return fetch_yahoo_calendar_events(
+        year=year,
+        page_url=YAHOO_EARNINGS_URL,
+        calendar_key="earningsCall",
+        event_type="earnings_call",
+        label="法說會",
+    )
+
+
+def fetch_yahoo_holders(year: int) -> List[EventItem]:
+    return fetch_yahoo_calendar_events(
+        year=year,
+        page_url=YAHOO_HOLDERS_MEETING_URL,
+        calendar_key="shareHoldersMeeting",
+        event_type="shareholder_meeting",
+        label="股東會",
+    )
+
+
+def fetch_yahoo_delisting(year: int) -> List[EventItem]:
+    return fetch_yahoo_calendar_events(
+        year=year,
+        page_url=YAHOO_DELISTING_URL,
+        calendar_key="delisting",
+        event_type="delisting",
+        label="終止掛牌",
+    )
 
 
 # -------------------------
@@ -333,21 +562,51 @@ def main() -> None:
     year = args.year
 
     events: List[EventItem] = []
+    query_range = get_yahoo_query_range_for_year(year)
+    target_start = date(year, 1, 1)
+    target_end = date(year, 12, 31)
+
+    if not query_range:
+        print(f"[warn] yahoo date range does not cover {year}.")
+    else:
+        query_start, query_end = query_range
+        if query_start > target_start or query_end < target_end:
+            print(
+                f"[info] yahoo available range for {year}: "
+                f"{query_start.isoformat()} ~ {query_end.isoformat()}"
+            )
 
     try:
-        events += fetch_dividend(year)
+        if USE_TWSE_DIVIDEND_API:
+            events += fetch_dividend(year)
+        else:
+            events += fetch_yahoo_dividend(year)
     except Exception as e:
-        print(f"[warn] dividend failed: {e}")
+        if USE_TWSE_DIVIDEND_API:
+            print(f"[warn] twse dividend failed: {e}")
+        else:
+            print(f"[warn] yahoo dividend failed: {e}")
+
+    if USE_MOPS_CALENDAR:
+        try:
+            events += fetch_mops(year)
+        except Exception as e:
+            print(f"[warn] mops failed: {e}")
 
     try:
-        events += fetch_mops(year)
+        events += fetch_yahoo_holders(year)
     except Exception as e:
-        print(f"[warn] mops failed: {e}")
+        print(f"[warn] yahoo holders meeting failed: {e}")
 
     try:
         events += fetch_yahoo_earnings(year)
     except Exception as e:
         print(f"[warn] yahoo earnings failed: {e}")
+
+    try:
+        events += fetch_yahoo_delisting(year)
+    except Exception as e:
+        print(f"[warn] yahoo delisting failed: {e}")
 
     data = build(events, year)
 
