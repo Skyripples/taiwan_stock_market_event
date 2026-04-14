@@ -3,7 +3,6 @@ const monthTitle = document.getElementById("monthTitle");
 const updateInfo = document.getElementById("updateInfo");
 
 const todayBtn = document.getElementById("todayBtn");
-const refreshBtn = document.getElementById("refreshBtn");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const stockSelect = document.getElementById("stockSelect");
@@ -64,6 +63,50 @@ function getDisplayText(eventItem) {
   return `${eventItem.stock_id} ${eventItem.stock_name}(${typeText})`;
 }
 
+function appendMetaLine(metaNode, label, value) {
+  const line = document.createElement("div");
+  const text = String(value || "").trim();
+  line.textContent = `${label}：${text || "-"}`;
+  metaNode.appendChild(line);
+}
+
+function appendSourceAndLink(metaNode, ev) {
+  appendMetaLine(metaNode, "來源", ev.source || "未知");
+  if (!ev.url) return;
+
+  const link = document.createElement("a");
+  link.className = "detail-link";
+  link.href = ev.url;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  link.textContent = "查看原始來源";
+  metaNode.appendChild(link);
+}
+
+function buildMetaByType(metaNode, ev) {
+  if (ev.type === "earnings_call" || ev.type === "shareholder_meeting") {
+    appendMetaLine(metaNode, "日期", ev.date);
+    appendMetaLine(metaNode, "時間", ev.time);
+    return;
+  }
+
+  if (ev.type === "dividend" || ev.type === "dividend_payment") {
+    const exDate = ev.ex_date || (ev.type === "dividend" ? ev.date : "");
+    const payDate = ev.pay_date || (ev.type === "dividend_payment" ? ev.date : "");
+
+    appendMetaLine(metaNode, "除權息日", exDate);
+    appendMetaLine(metaNode, "發放日期", payDate);
+    appendMetaLine(metaNode, "現金股利", ev.cash_dividend);
+    return;
+  }
+
+  appendMetaLine(metaNode, "日期", ev.date);
+  if (ev.time) {
+    appendMetaLine(metaNode, "時間", ev.time);
+  }
+  appendSourceAndLink(metaNode, ev);
+}
+
 function openModal(dateStr, dayEvents) {
   const dt = new Date(`${dateStr}T00:00:00`);
   modalTitle.textContent = dt.toLocaleDateString("zh-TW", {
@@ -97,23 +140,7 @@ function openModal(dateStr, dayEvents) {
 
       const meta = document.createElement("div");
       meta.className = "detail-meta";
-
-      const date = document.createElement("div");
-      date.textContent = `日期：${ev.date}`;
-
-      const source = document.createElement("div");
-      source.textContent = `來源：${ev.source || "未知"}`;
-
-      const link = document.createElement("a");
-      link.className = "detail-link";
-      link.href = ev.url || "#";
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      link.textContent = "查看原始來源";
-
-      meta.appendChild(date);
-      meta.appendChild(source);
-      meta.appendChild(link);
+      buildMetaByType(meta, ev);
 
       card.appendChild(type);
       card.appendChild(title);
@@ -296,22 +323,10 @@ function renderCalendar() {
   }
 }
 
-function setRefreshButtonState(isLoading) {
-  if (!refreshBtn) return;
-  refreshBtn.disabled = isLoading;
-  refreshBtn.textContent = isLoading ? "更新中..." : "重新整理";
-}
-
-async function loadEvents(options = {}) {
-  const { manual = false } = options;
+async function loadEvents() {
   if (isReloading) return;
 
   isReloading = true;
-  setRefreshButtonState(true);
-
-  if (manual) {
-    updateInfo.textContent = "重新整理中...";
-  }
 
   try {
     const res = await fetch(`./data/event.json?t=${Date.now()}`, { cache: "no-store" });
@@ -332,7 +347,6 @@ async function loadEvents(options = {}) {
     rebuildStockSelectOptions();
   } finally {
     isReloading = false;
-    setRefreshButtonState(false);
     renderCalendar();
   }
 }
@@ -356,12 +370,6 @@ if (themeToggleSwitch) {
   });
 }
 
-if (refreshBtn) {
-  refreshBtn.addEventListener("click", () => {
-    loadEvents({ manual: true });
-  });
-}
-
 prevBtn.addEventListener("click", () => {
   currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
   renderCalendar();
@@ -382,5 +390,4 @@ document.addEventListener("keydown", (evt) => {
 });
 
 setTheme(getPreferredTheme(), { persist: false });
-setRefreshButtonState(false);
 loadEvents();

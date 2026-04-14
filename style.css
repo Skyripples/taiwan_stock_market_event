@@ -21,11 +21,12 @@
   --detail-meta: #374151;
   --close-muted: #9ca3af;
   --close-hover: #4b5563;
-  --dividend: #f08a8a;
-  --dividend-payment: #facc15;
-  --earnings-call: #22c55e;
-  --shareholder-meeting: #3b82f6;
-  --delisting: #ef4444;
+  --event-text: #ffffff;
+  --dividend: #0057d8;
+  --dividend-payment: #b45309;
+  --earnings-call: #00873c;
+  --shareholder-meeting: #7a2cff;
+  --delisting: #d90429;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
@@ -33,31 +34,35 @@
 }
 
 body.theme-dark {
-  --bg: #0b1220;
-  --card: #111827;
-  --border: #374151;
+  --bg: #030712;
+  --card: #0a0f1a;
+  --border: #1f2937;
   --text: #e5e7eb;
   --muted: #94a3b8;
-  --today: #1e293b;
-  --other-month: #0f172a;
-  --control-bg: #1f2937;
-  --control-border: #4b5563;
+  --today: #172036;
+  --other-month: #060b14;
+  --control-bg: #0f172a;
+  --control-border: #334155;
   --control-text: #e5e7eb;
-  --control-hover: #273449;
-  --weekdays-bg: #0f172a;
-  --day-bg: #111827;
-  --day-hover: #1a2638;
+  --control-hover: #162033;
+  --weekdays-bg: #070d18;
+  --day-bg: #0a0f1a;
+  --day-hover: #111a2b;
   --day-number: #d1d5db;
-  --modal-bg: #0f172a;
-  --modal-backdrop: rgba(2, 6, 23, 0.72);
-  --detail-bg: #111827;
-  --detail-border: #374151;
+  --modal-bg: #050a14;
+  --modal-backdrop: rgba(0, 0, 0, 0.82);
+  --detail-bg: #0a0f1a;
+  --detail-border: #1f2937;
   --detail-meta: #cbd5e1;
   --close-muted: #cbd5e1;
   --close-hover: #f8fafc;
-  --dividend-payment: #fbbf24;
-  --delisting: #f87171;
-  --shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  --event-text: #ffffff;
+  --dividend: #2f7bff;
+  --dividend-payment: #c2410c;
+  --earnings-call: #22c55e;
+  --shareholder-meeting: #b26bff;
+  --delisting: #ff4d6d;
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.62);
   --primary: #60a5fa;
   --primary-hover: #3b82f6;
   --primary-disabled: #475569;
@@ -358,7 +363,7 @@ a {
   width: 100%;
   border-radius: 6px;
   padding: 6px 8px;
-  color: white;
+  color: var(--event-text);
   text-decoration: none;
   font-size: 13px;
   line-height: 1.3;
@@ -373,7 +378,6 @@ a {
 
 .event-pill.dividend_payment {
   background: var(--dividend-payment);
-  color: #111827;
 }
 
 .event-pill.earnings_call {
@@ -480,7 +484,7 @@ a {
 .detail-type {
   display: inline-block;
   background: var(--dividend);
-  color: white;
+  color: var(--event-text);
   border-radius: 999px;
   padding: 4px 10px;
   font-size: 12px;
@@ -497,7 +501,6 @@ a {
 
 .detail-type.dividend_payment {
   background: var(--dividend-payment);
-  color: #111827;
 }
 
 .detail-type.delisting {

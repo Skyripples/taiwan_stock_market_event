@@ -67,6 +67,10 @@ class EventItem:
     date: str
     source: str
     url: str
+    time: str = ""
+    ex_date: str = ""
+    pay_date: str = ""
+    cash_dividend: str = ""
 
 
 def parse_args() -> argparse.Namespace:
@@ -221,22 +225,30 @@ def fetch_mops(year: int) -> List[EventItem]:
 # -------------------------
 # Yahoo 法說會
 # -------------------------
-def parse_yahoo_datetime(text: str) -> Optional[str]:
+def parse_yahoo_datetime_parts(text: str) -> Tuple[Optional[str], str]:
     text = clean_text(text)
     if not text:
-        return None
+        return None, ""
 
-    m = re.search(r"\d{4}-\d{2}-\d{2}", text)
+    normalized = text.replace("Z", "+00:00")
+    try:
+        dt = datetime.fromisoformat(normalized)
+        return dt.strftime("%Y-%m-%d"), dt.strftime("%H:%M")
+    except ValueError:
+        pass
+
+    m = re.search(r"(?P<date>\d{4}-\d{2}-\d{2})(?:[ T](?P<time>\d{2}:\d{2})(?::\d{2})?)?", text)
     if m:
-        return m.group(0)
+        return m.group("date"), clean_text(m.group("time"))
 
-    formats = ["%Y/%m/%d %H:%M", "%Y/%m/%d", "%Y-%m-%d"]
+    formats = ["%Y/%m/%d %H:%M", "%Y/%m/%d", "%Y-%m-%d %H:%M", "%Y-%m-%d"]
     for fmt in formats:
         try:
-            return datetime.strptime(text, fmt).strftime("%Y-%m-%d")
+            dt = datetime.strptime(text, fmt)
+            return dt.strftime("%Y-%m-%d"), dt.strftime("%H:%M") if "%H:%M" in fmt else ""
         except ValueError:
             continue
-    return None
+    return None, ""
 
 
 def normalize_yahoo_symbol(symbol_text: str) -> str:
@@ -344,6 +356,13 @@ def parse_positive_number(value: Any) -> Optional[float]:
     return num if num > 0 else None
 
 
+def format_cash_dividend(cash_value: Any) -> str:
+    cash_amount = parse_positive_number(cash_value)
+    if cash_amount is None:
+        return ""
+    return f"{cash_amount:.2f}"
+
+
 def build_dividend_payment_text(cash_value: Any, stock_value: Any) -> str:
     stock_amount = parse_positive_number(stock_value)
     if stock_amount is not None:
@@ -397,7 +416,7 @@ def fetch_yahoo_calendar_events(
                 date_text = clean_text(item.get("date")) or clean_text(item.get("exDate"))
 
                 stock_id = normalize_yahoo_symbol(stock_symbol)
-                iso_date = parse_yahoo_datetime(date_text)
+                iso_date, iso_time = parse_yahoo_datetime_parts(date_text)
                 event_id = clean_text(item.get("eventId"))
 
                 if not stock_id or not stock_name or not iso_date:
@@ -419,6 +438,7 @@ def fetch_yahoo_calendar_events(
                         date=iso_date,
                         source="Yahoo",
                         url=page_url,
+                        time=iso_time if event_type in {"earnings_call", "shareholder_meeting"} else "",
                     )
                 )
 
@@ -462,8 +482,9 @@ def fetch_yahoo_dividend(year: int) -> List[EventItem]:
                 if not stock_id or not stock_name:
                     continue
 
-                ex_date = parse_yahoo_datetime(clean_text(item.get("date")) or clean_text(item.get("exDate")))
-                pay_date = parse_yahoo_datetime(clean_text(item.get("payDate")))
+                ex_date, _ = parse_yahoo_datetime_parts(clean_text(item.get("date")) or clean_text(item.get("exDate")))
+                pay_date, _ = parse_yahoo_datetime_parts(clean_text(item.get("payDate")))
+                cash_dividend = format_cash_dividend(item.get("cash"))
                 payout_text = build_dividend_payment_text(item.get("cash"), item.get("stock"))
 
                 if ex_date and ex_date.startswith(str(year)):
@@ -479,6 +500,9 @@ def fetch_yahoo_dividend(year: int) -> List[EventItem]:
                                 date=ex_date,
                                 source="Yahoo",
                                 url=YAHOO_DIVIDEND_URL,
+                                ex_date=ex_date,
+                                pay_date=pay_date or "",
+                                cash_dividend=cash_dividend,
                             )
                         )
 
@@ -497,6 +521,9 @@ def fetch_yahoo_dividend(year: int) -> List[EventItem]:
                                 date=pay_date,
                                 source="Yahoo",
                                 url=YAHOO_DIVIDEND_URL,
+                                ex_date=ex_date or "",
+                                pay_date=pay_date,
+                                cash_dividend=cash_dividend,
                             )
                         )
 
@@ -542,11 +569,11 @@ def build(events: List[EventItem], year: int) -> Dict[str, Any]:
 
     unique: Dict[tuple, EventItem] = {}
     for e in events:
-        unique[(e.stock_id, e.date, e.type)] = e
+        unique[(e.stock_id, e.date, e.type, e.time, e.title)] = e
 
     final = sorted(
         [asdict(v) for v in unique.values()],
-        key=lambda x: (x["date"], x["stock_id"], x["type"], x["stock_name"]),
+        key=lambda x: (x["date"], x["stock_id"], x["type"], x.get("time", ""), x["stock_name"]),
     )
 
     return {
