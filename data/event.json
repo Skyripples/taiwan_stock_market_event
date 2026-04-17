@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "updated_at_utc": "2026-04-16 03:35:36 UTC",
-  "updated_at_taipei": "2026-04-16 11:35:36 UTC+8",
+  "updated_at_utc": "2026-04-17 03:31:19 UTC",
+  "updated_at_taipei": "2026-04-17 11:31:19 UTC+8",
   "events": [
     {
       "stock_id": "00939",
@@ -20271,6 +20271,32 @@
       "cash_dividend": "0.05"
     },
     {
+      "stock_id": "1314",
+      "stock_name": "中石化",
+      "type": "earnings_call",
+      "title": "1314 中石化(法說會)",
+      "date": "2026-04-17",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "16:00",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
+      "stock_id": "2364",
+      "stock_name": "倫飛",
+      "type": "earnings_call",
+      "title": "2364 倫飛(法說會)",
+      "date": "2026-04-17",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "14:30",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
       "stock_id": "2630",
       "stock_name": "亞航",
       "type": "dividend_payment",
@@ -20323,6 +20349,19 @@
       "cash_dividend": ""
     },
     {
+      "stock_id": "5222",
+      "stock_name": "全訊",
+      "type": "earnings_call",
+      "title": "5222 全訊(法說會)",
+      "date": "2026-04-17",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "14:10",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
       "stock_id": "5306",
       "stock_name": "桂盟",
       "type": "dividend_payment",
@@ -20349,6 +20388,19 @@
       "cash_dividend": "7.50"
     },
     {
+      "stock_id": "6830",
+      "stock_name": "汎銓",
+      "type": "earnings_call",
+      "title": "6830 汎銓(法說會)",
+      "date": "2026-04-17",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "12:30",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
       "stock_id": "7736",
       "stock_name": "虎山",
       "type": "dividend_payment",
@@ -20362,6 +20414,32 @@
       "cash_dividend": "3.80"
     },
     {
+      "stock_id": "7805",
+      "stock_name": "威聯通",
+      "type": "earnings_call",
+      "title": "7805 威聯通(法說會)",
+      "date": "2026-04-17",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "14:30",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
+      "stock_id": "8404",
+      "stock_name": "百和興業-KY",
+      "type": "earnings_call",
+      "title": "8404 百和興業-KY(法說會)",
+      "date": "2026-04-17",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "14:00",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
       "stock_id": "9938",
       "stock_name": "百和",
       "type": "earnings_call",
@@ -20370,6 +20448,19 @@
       "source": "Yahoo",
       "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
       "time": "14:30",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
+      "stock_id": "2458",
+      "stock_name": "義隆",
+      "type": "earnings_call",
+      "title": "2458 義隆(法說會)",
+      "date": "2026-04-18",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "10:10",
       "ex_date": "",
       "pay_date": "",
       "cash_dividend": ""
@@ -22442,6 +22533,19 @@
       "cash_dividend": "6.50"
     },
     {
+      "stock_id": "3552",
+      "stock_name": "同致",
+      "type": "earnings_call",
+      "title": "3552 同致(法說會)",
+      "date": "2026-04-27",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "15:00",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
       "stock_id": "4105",
       "stock_name": "東洋",
       "type": "dividend_payment",
@@ -22479,6 +22583,19 @@
       "ex_date": "2026-03-26",
       "pay_date": "2026-04-27",
       "cash_dividend": "1.50"
+    },
+    {
+      "stock_id": "6435",
+      "stock_name": "大中",
+      "type": "earnings_call",
+      "title": "6435 大中(法說會)",
+      "date": "2026-04-27",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "14:30",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
     },
     {
       "stock_id": "6697",
@@ -23040,6 +23157,19 @@
       "cash_dividend": ""
     },
     {
+      "stock_id": "2379",
+      "stock_name": "瑞昱",
+      "type": "earnings_call",
+      "title": "2379 瑞昱(法說會)",
+      "date": "2026-04-30",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "15:00",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
       "stock_id": "2409",
       "stock_name": "友達",
       "type": "earnings_call",
@@ -23048,6 +23178,19 @@
       "source": "Yahoo",
       "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
       "time": "14:00",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
+    },
+    {
+      "stock_id": "2454",
+      "stock_name": "聯發科",
+      "type": "earnings_call",
+      "title": "2454 聯發科(法說會)",
+      "date": "2026-04-30",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "15:00",
       "ex_date": "",
       "pay_date": "",
       "cash_dividend": ""
@@ -23313,6 +23456,19 @@
       "cash_dividend": "4.00"
     },
     {
+      "stock_id": "00939",
+      "stock_name": "統一台灣高息動能",
+      "type": "dividend",
+      "title": "00939 統一台灣高息動能(除權息)",
+      "date": "2026-05-04",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/dividend",
+      "time": "",
+      "ex_date": "2026-05-04",
+      "pay_date": "2026-05-26",
+      "cash_dividend": "0.07"
+    },
+    {
       "stock_id": "00940",
       "stock_name": "元大台灣價值高息",
       "type": "dividend_payment",
@@ -23324,6 +23480,19 @@
       "ex_date": "2026-04-09",
       "pay_date": "2026-05-04",
       "cash_dividend": "0.05"
+    },
+    {
+      "stock_id": "00984D",
+      "stock_name": "主動聯博全球非投",
+      "type": "dividend",
+      "title": "00984D 主動聯博全球非投(除權息)",
+      "date": "2026-05-04",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/dividend",
+      "time": "",
+      "ex_date": "2026-05-04",
+      "pay_date": "2026-05-26",
+      "cash_dividend": "0.09"
     },
     {
       "stock_id": "2344",
@@ -23389,6 +23558,19 @@
       "ex_date": "2026-03-31",
       "pay_date": "2026-05-05",
       "cash_dividend": "12.10"
+    },
+    {
+      "stock_id": "6412",
+      "stock_name": "群電",
+      "type": "earnings_call",
+      "title": "6412 群電(法說會)",
+      "date": "2026-05-05",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/earnings-call",
+      "time": "15:00",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
     },
     {
       "stock_id": "6526",
@@ -29343,6 +29525,32 @@
       "ex_date": "",
       "pay_date": "",
       "cash_dividend": ""
+    },
+    {
+      "stock_id": "00939",
+      "stock_name": "統一台灣高息動能",
+      "type": "dividend_payment",
+      "title": "00939 統一台灣高息動能 現金股利0.07",
+      "date": "2026-05-26",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/dividend",
+      "time": "",
+      "ex_date": "2026-05-04",
+      "pay_date": "2026-05-26",
+      "cash_dividend": "0.07"
+    },
+    {
+      "stock_id": "00984D",
+      "stock_name": "主動聯博全球非投",
+      "type": "dividend_payment",
+      "title": "00984D 主動聯博全球非投 現金股利0.09",
+      "date": "2026-05-26",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/dividend",
+      "time": "",
+      "ex_date": "2026-05-04",
+      "pay_date": "2026-05-26",
+      "cash_dividend": "0.09"
     },
     {
       "stock_id": "1717",
