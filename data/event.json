@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "updated_at_utc": "2026-05-30 01:09:38 UTC",
-  "updated_at_taipei": "2026-05-30 09:09:38 UTC+8",
+  "updated_at_utc": "2026-05-31 01:17:45 UTC",
+  "updated_at_taipei": "2026-05-31 09:17:45 UTC+8",
   "events": [
     {
       "stock_id": "00939",
@@ -55681,6 +55681,19 @@
       "ex_date": "2026-08-04",
       "pay_date": "2026-08-31",
       "cash_dividend": "1.10"
+    },
+    {
+      "stock_id": "4130",
+      "stock_name": "健亞",
+      "type": "shareholder_meeting",
+      "title": "4130 健亞(股東會)",
+      "date": "2026-08-31",
+      "source": "Yahoo",
+      "url": "https://tw.stock.yahoo.com/calendar/holders-meeting",
+      "time": "09:00",
+      "ex_date": "",
+      "pay_date": "",
+      "cash_dividend": ""
     },
     {
       "stock_id": "6743",
